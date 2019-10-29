@@ -1,0 +1,22 @@
+<div class="jumbotron" style="padding:45px 0px;">
+  <h2 class="text-center" >My Todo List</h2>
+</div>
+<div class="input-group">
+  <input class="form-control" type="text" #task>
+  <div class="input-group-addon" (click)="addTask(task)">
+    <i class="fa fa-plus-circle"></i>
+  </div>
+</div>
+<div class="form-group">
+  <div *ngFor="let task of todos;" class="row">
+    <div class="col-md-1">
+      <input type="checkbox" [checked]="task.task.iscompleted" class="form-control">
+    </div>
+    <div class="col-md-10">
+      {{task.task.todo}}
+    </div>
+    <div class="col-md-1" (click)="removeTask(task.key)">
+      <i class="fa fa-minus-circle"></i>
+    </div>
+  </div>
+</div>
